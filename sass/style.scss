@@ -1,0 +1,244 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/classes";
+
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Circular Std", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #282938;
+}
+// .navbar-nav{
+  
+// }
+
+// .navbar-nav li{
+  
+// }
+.nav-link{
+  display: inline-flex;
+  margin: 0;
+}
+.navbar-collapse{
+  justify-content: flex-end;
+  .navbar-nav{
+    li{
+      padding-right: 30px;
+      font-family: Circular Std;
+      font-style: normal;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 29px;
+      letter-spacing: 0.75px;
+      text-transform: uppercase
+    }
+    a{
+      color: $dark-text !important;
+    }
+  }
+}
+
+.banner {
+  background-color: $background-light;
+  text-align: center;
+  padding-top: 110px;
+  height: 700px;
+}
+.font-weight-semibold {
+  font-weight: 600;
+}
+.text-muted {
+  color: #6e6e6e!important;
+}
+.font-weight-normal {
+  font-weight: 400!important;
+}
+
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include btn-variant($value);
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-opacity-#{$color} {
+    @include btn-opacity-variant($value);
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include btn-outline-variant($value);
+  }
+}
+.banner_heading{
+  padding-top: 180px;
+  h1{
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 82px;
+    letter-spacing: 0.0075em;
+  }
+}
+
+.services_text{
+  text-align: center;
+}
+.form-control{
+  border: 1px solid #E5E5EA;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.send_btn{
+  width: 100%;
+  background: #016AAF;
+  border-radius: 5px;
+  height: 50px;
+  font-family: Circular Std;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+}
+
+.card {
+  border: none;
+  border-radius: 6px;
+  .card-body {
+    padding: 43px 36px;
+    .card-title {
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+  }
+}
+// PORTFOLIO
+.customer-feedback {
+  .customer-cards {
+    background: #f3f7fb;
+    font-size: 18px;
+    margin: 0px 12px;
+    transition: all 0.7s ease-in-out;
+    .img-customer {
+      border-radius: 50%;
+      transition: all 0.7s ease-in-out; 
+    }
+    &:hover {
+      background: #e4e7ea;
+      transform: scale(1.02);
+      .img-customer {
+        transform: scale(1.05);  
+      }
+    }
+    .content-divider {
+      width: 73px;
+      height: 3px;
+    }
+  }
+}
+.section-subtitle, .customer-designation {
+  font-weight: normal;
+}
+// OWL-CAROUSAL
+.owl-nav {
+  font-size: 30px;
+  text-align: center;
+  color: #6e6e6e
+}
+.owl-theme { 
+  .owl-dots { 
+    .owl-dot {
+      outline: none;
+      span   {
+        display: inline-block;
+        width: 0.9375rem;
+        height: 0.9375rem;
+        box-sizing: border-box;
+        background-color: #ff0000;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+        transition: all 0.3s ease-in-out;
+        opacity: 0.7;
+      }
+      &.active {
+        span {
+          background-color: transparent;
+          border-color: #ff0000;
+          -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
+.owl-carousel {
+  .owl-item {
+    padding: 16px 0px;
+    img {
+      width: auto;
+      margin: 0 auto;
+    }
+  } 
+}
+.owl-item {
+  &:nth-child(odd) {
+    .content-divider {
+      background-color: black;
+    }
+  }
+  &:nth-child(even) {
+    .content-divider {
+      background-color: red;
+    }
+  }
+}
+
+
+.footer_section{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #708090;
+}
+.footer_logo{
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px){
+  .info_section{
+    text-align: center;
+  }
+}
+.btn {
+  @media (max-width: 480px) {
+    padding: 5px 10px;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 1400px){
+  .digital-marketing-service{
+    padding: 15px;
+  }
+}
+@media (min-width: 1400px){
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+      max-width: 1140px;
+  }
+}
